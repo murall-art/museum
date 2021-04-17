@@ -1,0 +1,25 @@
+{
+  "name": "@murall/painter",
+  "version": "1.0.0",
+  "description": "Fetch images drawn on MurAll and the token metadata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MurAll-canvas/painter.git"
+  },
+  "keywords": [
+    "MurAll",
+    "paint",
+    "images",
+    "NFT"
+  ],
+  "author": "iuwqyir",
+  "bugs": {
+    "url": "https://github.com/MurAll-canvas/painter/issues"
+  },
+  "homepage": "https://github.com/MurAll-canvas/painter#readme",
+  "license": "ISC"
+}
