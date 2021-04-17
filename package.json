@@ -2,7 +2,8 @@
   "name": "@murall/painter",
   "version": "1.0.0",
   "description": "Fetch images drawn on MurAll and the token metadata",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,7 +26,8 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "husky": "^4.3.8"
+    "husky": "^4.3.8",
+    "typescript": "^4.2.4"
   },
   "husky": {
     "hooks": {
