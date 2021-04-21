@@ -3,7 +3,7 @@ import { extract, process } from '@murall/event-processor'
 import { L1, L2 } from '../connections/web3'
 import createCanvas from '../canvas/create'
 import saveImage from '../canvas/save-image'
-import fetchMetadata, { Metadata } from '../metadata/fetch'
+import { get as fetchMetadata, Metadata } from './metadata'
 
 export type FetchTokenOptions = {
   readonly isLayer2?: boolean

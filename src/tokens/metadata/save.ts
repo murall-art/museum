@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { Metadata } from './fetch'
+import { Metadata } from './index'
 
 export type FileOptions = {
   directory?: string

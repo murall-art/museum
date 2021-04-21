@@ -1,6 +1,6 @@
 import { Contract } from 'web3-eth-contract'
 import { hexToAscii } from 'web3-utils'
-import { L1, L2 } from '../connections/web3'
+import { L1, L2 } from '../../connections/web3'
 import save from './save'
 
 export type MetadataOptions = {
@@ -18,7 +18,7 @@ export type Metadata = {
   isFilled: boolean
 }
 
-export default async (id: number, opts?: MetadataOptions): Promise<Metadata | undefined> => {
+export const get = async (id: number, opts?: MetadataOptions): Promise<Metadata | undefined> => {
   if (id == null) return
   const options = opts || {}
   
