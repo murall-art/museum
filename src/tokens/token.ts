@@ -5,7 +5,7 @@ import createCanvas from '../canvas/create'
 import saveImage from '../canvas/save-image'
 import fetchMetadata, { Metadata } from '../metadata/fetch'
 
-export type Options = {
+export type FetchTokenOptions = {
   readonly isLayer2?: boolean
   readonly save?: boolean
   readonly downloadDir?: string
@@ -20,7 +20,7 @@ export type TokenData = {
 
 const imageFilename = (tokenId) => `token_${tokenId}.png`
 
-export const get = async (id: number, opts?: Options): Promise<TokenData | undefined> => {
+export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenData | undefined> => {
   if (id == null) return
   const options = opts || {}
 
