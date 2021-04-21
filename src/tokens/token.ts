@@ -44,3 +44,10 @@ export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenDa
   const metadata = await fetchMetadata(id, options)
   return { canvas, metadata }
 }
+
+export const max = async (isLayer2?: boolean): Promise<number> => {
+  const web3 = isLayer2 ? L2() : L1()
+  const nftContract = await web3.contracts.Nft.get()
+  const totalSupply = await nftContract.methods.totalSupply().call()
+  return totalSupply > 0 ? totalSupply - 1 : totalSupply
+}
