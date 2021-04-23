@@ -18,7 +18,7 @@ export type TokenData = {
   metadata?: Metadata
 }
 
-const imageFilename = (tokenId) => `token_${tokenId}.png`
+const imageFilename = (tokenId: number): string => `token_${tokenId}.png`
 
 export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenData | undefined> => {
   if (id == null) return
