@@ -32,8 +32,9 @@ export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenDa
     toBlock: 'latest'
   })
   const [event] = logEvents.map(extract) || []
-  if (!event) throw new Error(`Failed to process log event for token ${id}`)
+  if (!event) throw new Error(`Failed to fetch log event for token ${id}`)
   const pixels = process(event) || {}
+  if (!pixels) throw new Error(`Failed to process token ${id} data`)
 
   const canvas = createCanvas(pixels, options.cropped)
   if (options.save) {
