@@ -26,7 +26,7 @@
   "homepage": "https://github.com/MurAll-canvas/museum#readme",
   "license": "ISC",
   "dependencies": {
-    "@murall/event-processor": "^1.1.0",
+    "@murall/event-processor": "^1.1.1",
     "canvas": "^2.7.0",
     "lodash": "^4.17.21",
     "web3-eth": "^1.3.5",
