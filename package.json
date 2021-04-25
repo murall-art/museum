@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MurAll-canvas/museum.git"
+    "url": "git+https://github.com/murall-art/museum.git"
   },
   "keywords": [
     "MurAll",
@@ -21,9 +21,9 @@
   ],
   "author": "iuwqyir",
   "bugs": {
-    "url": "https://github.com/MurAll-canvas/museum/issues"
+    "url": "https://github.com/murall-art/museum/issues"
   },
-  "homepage": "https://github.com/MurAll-canvas/museum#readme",
+  "homepage": "https://github.com/murall-art/museum#readme",
   "license": "ISC",
   "dependencies": {
     "@murall/event-processor": "^1.1.1",
