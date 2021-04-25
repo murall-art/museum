@@ -9,6 +9,7 @@ export type FetchTokenOptions = {
   readonly isLayer2?: boolean
   readonly save?: boolean
   readonly saveDir?: string
+  readonly filename?: string
   readonly cropped?: boolean
   readonly includeMetadata?: boolean
 }
@@ -18,7 +19,7 @@ export type TokenData = {
   metadata?: Metadata
 }
 
-const imageFilename = (tokenId: number): string => `token_${tokenId}.png`
+const imageFilename = (tokenId: number, name?: string): string => name ? `${name}.png` : `token_${tokenId}.png`
 
 export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenData | undefined> => {
   if (id == null) return
@@ -38,7 +39,7 @@ export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenDa
 
   const canvas = createCanvas(pixels, options.cropped)
   if (options.save) {
-    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(id) })
+    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(id, options.filename) })
   }
   if (!options.includeMetadata) return { canvas }
 

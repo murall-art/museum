@@ -7,6 +7,7 @@ export type MetadataOptions = {
   readonly isLayer2?: boolean
   readonly save?: boolean
   readonly saveDir?: string
+  readonly filename?: string
 }
 
 export type Metadata = {
@@ -17,6 +18,8 @@ export type Metadata = {
   viewUrl: string
   isFilled: boolean
 }
+
+const metadataFilename = (id: number, name?: string) => name ? `${name}.json` : `metadata_${id}.json`
 
 export const get = async (id: number, opts?: MetadataOptions): Promise<Metadata | undefined> => {
   if (id == null) return
@@ -42,7 +45,7 @@ export const get = async (id: number, opts?: MetadataOptions): Promise<Metadata 
 
   const metadata: Metadata = { name, artist, number, series, viewUrl, isFilled }
   if (options.save) {
-    await save(metadata, { directory: options.saveDir, filename: `metadata_${id}.json` })
+    await save(metadata, { directory: options.saveDir, filename: metadataFilename(id, options.filename) })
   }
   return metadata
 }

@@ -37,6 +37,7 @@ Gets token image and metadata
 * `isLayer2` - *Optional* - Either `true` or `false` to specify whether to interact with Ethereum or Polygon. Defaults to `false`.
 * `save` - *Optional* - If `true` also saves the PNG image and JSON metadata on your system.
 * `saveDir` - *Optional* - Specify the save directory for the saved files. Only taken into account if the `save` option is `true`. Defaults to `.`
+* `filename` - *Optional* - Specify the name (without a file extension) for the saved file. Only taken into account if the `save` option is `true`. Defaults to `token_${id}.png`.
 * `cropped` - *Optional* - Whether the token image should be cropped (full image) or in the relative position it is on the MurAll canvas.
 
 **Returns**
@@ -51,6 +52,7 @@ Gets token metadata
 * `isLayer2` - *Optional* - Either `true` or `false` to specify whether to interact with Ethereum or Polygon. Defaults to `false`.
 * `save` - *Optional* - If `true` also saves the JSON metadata on your system.
 * `saveDir` - *Optional* - Specify the save directory for the saved file. Only taken into account if the `save` option is `true`. Defaults to `.`
+* `filename` - *Optional* - Specify the name (without a file extension) for the saved file. Only taken into account if the `save` option is `true`. Defaults to `metadata_${id}.json`.
 
 **Returns**
 `{ name, artist, number, series, viewUrl, isFilled }` - Object containing the JSON metadata
@@ -81,6 +83,7 @@ Renders the token images from the given range on a single image in their respect
 * `isLayer2` - *Optional* - Either `true` or `false` to specify whether to interact with Ethereum or Polygon. Defaults to `false`.
 * `save` - *Optional* - If `true` also saves the JSON metadata on your system.
 * `saveDir` - *Optional* - Specify the save directory for the saved file. Only taken into account if the `save` option is `true`. Defaults to `.`
+* `filename` - *Optional* - Specify the name (without a file extension) for the saved file. Only taken into account if the `save` option is `true`. Defaults to `tokens_${from}-${to}.png`.
 * `initialState` - *Optional* - Canvas object to act as the initial state on which token images will be loaded. If not specified, the token images will be put onto a blank canvas.
 
 **Returns**

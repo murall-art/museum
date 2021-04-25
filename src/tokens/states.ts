@@ -11,9 +11,10 @@ export type ApplyChangesOptions = {
   readonly initialState?: Canvas
   readonly save?: boolean
   readonly saveDir?: string
+  readonly filename?: string
 }
 
-const imageFilename = (from: number, to: number) => `tokens_${from}-${to}.png`
+const imageFilename = (from: number, to: number, name?: string) => name ? `${name}.png` : `tokens_${from}-${to}.png`
 
 export const apply = async (from = 0, to = 1, opts?: ApplyChangesOptions): Promise<Canvas> => {
   const options = opts || {}
@@ -36,7 +37,7 @@ export const apply = async (from = 0, to = 1, opts?: ApplyChangesOptions): Promi
   })
 
   if (options.save) {
-    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(from, to) })
+    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(from, to, options.filename) })
   }
   return canvas
 }
