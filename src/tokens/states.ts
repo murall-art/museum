@@ -10,7 +10,7 @@ export type ApplyChangesOptions = {
   readonly isLayer2?: boolean
   readonly initialState?: Canvas
   readonly save?: boolean
-  readonly downloadDir?: string
+  readonly saveDir?: string
 }
 
 const imageFilename = (from: number, to: number) => `tokens_${from}-${to}.png`
@@ -36,7 +36,7 @@ export const apply = async (from = 0, to = 1, opts?: ApplyChangesOptions): Promi
   })
 
   if (options.save) {
-    await saveImage(canvas, { directory: options.downloadDir, filename: imageFilename(from, to) })
+    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(from, to) })
   }
   return canvas
 }

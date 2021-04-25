@@ -8,7 +8,7 @@ import { get as fetchMetadata, Metadata } from './metadata'
 export type FetchTokenOptions = {
   readonly isLayer2?: boolean
   readonly save?: boolean
-  readonly downloadDir?: string
+  readonly saveDir?: string
   readonly cropped?: boolean
   readonly includeMetadata?: boolean
 }
@@ -38,7 +38,7 @@ export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenDa
 
   const canvas = createCanvas(pixels, options.cropped)
   if (options.save) {
-    await saveImage(canvas, { directory: options.downloadDir, filename: imageFilename(id) })
+    await saveImage(canvas, { directory: options.saveDir, filename: imageFilename(id) })
   }
   if (!options.includeMetadata) return { canvas }
 

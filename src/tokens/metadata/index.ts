@@ -6,7 +6,7 @@ import save from './save'
 export type MetadataOptions = {
   readonly isLayer2?: boolean
   readonly save?: boolean
-  readonly downloadDir?: string
+  readonly saveDir?: string
 }
 
 export type Metadata = {
@@ -42,7 +42,7 @@ export const get = async (id: number, opts?: MetadataOptions): Promise<Metadata 
 
   const metadata: Metadata = { name, artist, number, series, viewUrl, isFilled }
   if (options.save) {
-    await save(metadata, { directory: options.downloadDir, filename: `metadata_${id}.json` })
+    await save(metadata, { directory: options.saveDir, filename: `metadata_${id}.json` })
   }
   return metadata
 }
