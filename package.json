@@ -1,5 +1,5 @@
 {
-  "name": "@murall/painter",
+  "name": "@murall/museum",
   "version": "1.0.0",
   "description": "Fetch images drawn on MurAll and the token metadata",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MurAll-canvas/painter.git"
+    "url": "git+https://github.com/MurAll-canvas/museum.git"
   },
   "keywords": [
     "MurAll",
@@ -19,9 +19,9 @@
   ],
   "author": "iuwqyir",
   "bugs": {
-    "url": "https://github.com/MurAll-canvas/painter/issues"
+    "url": "https://github.com/MurAll-canvas/museum/issues"
   },
-  "homepage": "https://github.com/MurAll-canvas/painter#readme",
+  "homepage": "https://github.com/MurAll-canvas/museum#readme",
   "license": "ISC",
   "dependencies": {
     "@murall/event-processor": "^1.1.0",
