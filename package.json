@@ -1,6 +1,6 @@
 {
   "name": "@murall/museum",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Fetch images drawn on MurAll and the token metadata",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
