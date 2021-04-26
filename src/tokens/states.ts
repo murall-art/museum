@@ -12,6 +12,8 @@ export type ApplyChangesOptions = {
   readonly save?: boolean
   readonly saveDir?: string
   readonly filename?: string
+  readonly fromBlock?: number
+  readonly toBlock?: number
 }
 
 const imageFilename = (from: number, to: number, name?: string) => name ? `${name}.png` : `tokens_${from}-${to}.png`
@@ -23,8 +25,8 @@ export const apply = async (from = 0, to = 1, opts?: ApplyChangesOptions): Promi
   const murallContract = await web3.contracts.MurAll.get()
   const logEvents = await murallContract.getPastEvents('Painted', {
     filter: { tokenId: range(from, to) },
-    fromBlock: 'earliest',
-    toBlock: 'latest'
+    fromBlock: options.fromBlock || 'earliest',
+    toBlock: options.toBlock || 'latest'
   })
   const events = compact(logEvents.map(extract)) || []
   if (!events.length) throw new Error(`Failed to fetch log events for tokens ${from} to ${to}`)

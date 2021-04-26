@@ -12,6 +12,8 @@ export type FetchTokenOptions = {
   readonly filename?: string
   readonly cropped?: boolean
   readonly includeMetadata?: boolean
+  readonly fromBlock?: number
+  readonly toBlock?: number
 }
 
 export type TokenData = {
@@ -29,8 +31,8 @@ export const get = async (id: number, opts?: FetchTokenOptions): Promise<TokenDa
   const murallContract = await web3.contracts.MurAll.get()
   const logEvents = await murallContract.getPastEvents('Painted', {
     filter: { tokenId: [id] },
-    fromBlock: 'earliest',
-    toBlock: 'latest'
+    fromBlock: options.fromBlock || 'earliest',
+    toBlock: options.toBlock || 'latest'
   })
   const [event] = logEvents.map(extract) || []
   if (!event) throw new Error(`Failed to fetch log event for token ${id}`)

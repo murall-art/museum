@@ -39,6 +39,8 @@ Gets token image and metadata
 * `saveDir` - *Optional* - Specify the save directory for the saved files. Only taken into account if the `save` option is `true`. Defaults to `.`
 * `filename` - *Optional* - Specify the name (without a file extension) for the saved file. Only taken into account if the `save` option is `true`. Defaults to `token_${id}.png`.
 * `cropped` - *Optional* - Whether the token image should be cropped (full image) or in the relative position it is on the MurAll canvas.
+* `fromBlock` - *Optional* - Start of the block range from which the log events are queried. Defaults to `earliest`.
+* `toBlock` - *Optional* - End of the block range from which the log events are queried. Defaults to `latest`.
 
 **Returns**
 `{ canvas, [metadata]}` - Object containing the node Canvas and a JSON metadata object, if metadata was also required.
@@ -85,6 +87,9 @@ Renders the token images from the given range on a single image in their respect
 * `saveDir` - *Optional* - Specify the save directory for the saved file. Only taken into account if the `save` option is `true`. Defaults to `.`
 * `filename` - *Optional* - Specify the name (without a file extension) for the saved file. Only taken into account if the `save` option is `true`. Defaults to `tokens_${from}-${to}.png`.
 * `initialState` - *Optional* - Canvas object to act as the initial state on which token images will be loaded. If not specified, the token images will be put onto a blank canvas.
+* `fromBlock` - *Optional* - Start of the block range from which the log events are queried. Defaults to `earliest`.
+* `toBlock` - *Optional* - End of the block range from which the log events are queried. Defaults to `latest`.
+
 
 **Returns**
 Canvas containing the token images. 
